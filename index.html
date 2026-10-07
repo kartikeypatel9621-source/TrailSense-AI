@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TrailSense AI — Touch Grass</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="background">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+</div>
+
+<header>
+
+    <div class="logo">
+        <div class="logo-icon">🌿</div>
+        <div>
+            <h1>TrailSense</h1>
+            <span>AI OUTDOOR COMPANION</span>
+        </div>
+    </div>
+
+    <div class="header-right">
+        <div class="status">
+            <span class="status-dot"></span>
+            AI READY
+        </div>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </div>
+
+</header>
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                <span>✦</span>
+                OPEN AI • TOUCH GRASS
+            </div>
+
+            <h2>
+                Your screen<br>
+                <span>should lead you outside.</span>
+            </h2>
+
+            <p>
+                TrailSense uses open AI to turn ordinary walks into
+                real-world exploration missions.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn" onclick="startMission()">
+                    <span>START EXPEDITION</span>
+                    <b>→</b>
+                </button>
+
+                <button class="secondary-btn" onclick="openScanner()">
+                    📸 Scan Nature
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="planet">
+                <div class="planet-inner">
+                    🌎
+                </div>
+
+                <div class="orbit orbit-a">
+                    <span>🌿</span>
+                </div>
+
+                <div class="orbit orbit-b">
+                    <span>🐦</span>
+                </div>
+
+                <div class="orbit orbit-c">
+                    <span>☀️</span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+            <span>EXPEDITION LEVEL</span>
+            <strong id="level">04</strong>
+        </div>
+
+        <div class="stat-card">
+            <span>TOTAL XP</span>
+            <strong id="xp">420</strong>
+        </div>
+
+        <div class="stat-card">
+            <span>OUTDOOR STREAK</span>
+            <strong id="streak">06 🔥</strong>
+        </div>
+
+        <div class="stat-card">
+            <span>DISCOVERIES</span>
+            <strong id="discoveries">18</strong>
+        </div>
+
+    </section>
+
+
+    <!-- MISSION -->
+
+    <section class="mission-section">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="small-label">AI GENERATED</span>
+                <h3>Today's Mission</h3>
+            </div>
+
+            <button class="refresh-btn" onclick="generateMission()">
+                ↻ New Mission
+            </button>
+
+        </div>
+
+
+        <div class="mission-card">
+
+            <div class="mission-number">
+                01
+            </div>
+
+            <div class="mission-content">
+
+                <div class="mission-tag">
+                    👁 OBSERVATION
+                </div>
+
+                <h4 id="missionTitle">
+                    Find something that shows evidence of wildlife.
+                </h4>
+
+                <p id="missionDescription">
+                    Look around your surroundings and find footprints,
+                    feathers, nests, bite marks or any other sign of an animal.
+                </p>
+
+                <div class="mission-meta">
+
+                    <span>⏱ 10 MIN</span>
+                    <span>⭐ +50 XP</span>
+                    <span>🌳 OUTDOOR</span>
+
+                </div>
+
+                <button class="complete-btn" onclick="completeMission()">
+                    COMPLETE MISSION
+                </button>
+
+            </div>
+
+            <div class="mission-art">
+                🐾
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AI TOOLS -->
+
+    <section class="tools-section">
+
+        <div class="section-heading">
+            <div>
+                <span class="small-label">EXPLORE</span>
+                <h3>Your AI Toolkit</h3>
+            </div>
+        </div>
+
+
+        <div class="tools-grid">
+
+            <div class="tool-card" onclick="openScanner()">
+
+                <div class="tool-icon">📸</div>
+
+                <h4>Nature Scanner</h4>
+
+                <p>
+                    Photograph something interesting and let AI
+                    identify it.
+                </p>
+
+                <span class="tool-link">
+                    OPEN SCANNER →
+                </span>
+
+            </div>
+
+
+            <div class="tool-card" onclick="openAI()">
+
+                <div class="tool-icon">🧠</div>
+
+                <h4>Ask TrailSense</h4>
+
+                <p>
+                    Ask AI questions about plants, animals,
+                    trails and nature.
+                </p>
+
+                <span class="tool-link">
+                    ASK AI →
+                </span>
+
+            </div>
+
+
+            <div class="tool-card" onclick="startVoice()">
+
+                <div class="tool-icon">🎙️</div>
+
+                <h4>Voice Explorer</h4>
+
+                <p>
+                    Talk to your AI companion while exploring.
+                </p>
+
+                <span class="tool-link">
+                    START VOICE →
+                </span>
+
+            </div>
+
+
+            <div class="tool-card" onclick="showReport()">
+
+                <div class="tool-icon">📊</div>
+
+                <h4>Expedition Report</h4>
+
+                <p>
+                    See what you discovered during your
+                    outdoor journey.
+                </p>
+
+                <span class="tool-link">
+                    VIEW REPORT →
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OPEN AI -->
+
+    <section class="open-ai">
+
+        <div class="open-icon">
+            ◉
+        </div>
+
+        <div>
+
+            <span class="small-label">WHY OPEN AI?</span>
+
+            <h3>
+                Intelligence that belongs to the explorer.
+            </h3>
+
+            <p>
+                TrailSense is designed around open-weight AI.
+                Models can be swapped, modified, fine-tuned and
+                eventually run locally without sending your
+                observations to a closed cloud.
+            </p>
+
+            <div class="ai-points">
+
+                <span>🔒 PRIVATE</span>
+                <span>📡 OFFLINE READY</span>
+                <span>🔄 MODEL SWAPPABLE</span>
+                <span>💸 LOW COST</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- SCANNER MODAL -->
+
+<div class="modal" id="scannerModal">
+
+    <div class="modal-box">
+
+        <button class="close" onclick="closeModal('scannerModal')">
+            ×
+        </button>
+
+        <div class="modal-icon">📸</div>
+
+        <h3>Nature Scanner</h3>
+
+        <p>
+            Upload a photo of something you discovered outside.
+        </p>
+
+        <label class="upload">
+
+            <input
+                type="file"
+                id="imageInput"
+                accept="image/*"
+                onchange="previewImage(event)"
+            >
+
+            <span id="uploadText">
+                📷 Choose a photo
+            </span>
+
+        </label>
+
+        <img id="preview" class="preview">
+
+        <button
+            class="primary-btn full"
+            onclick="analyzeImage()"
+        >
+            ANALYZE WITH AI
+        </button>
+
+        <div id="scanResult" class="result"></div>
+
+    </div>
+
+</div>
+
+
+<!-- AI CHAT -->
+
+<div class="modal" id="aiModal">
+
+    <div class="modal-box chat-box">
+
+        <button class="close" onclick="closeModal('aiModal')">
+            ×
+        </button>
+
+        <div class="modal-icon">🧠</div>
+
+        <h3>Ask TrailSense</h3>
+
+        <p>Your AI outdoor companion.</p>
+
+        <div class="chat" id="chat">
+
+            <div class="message ai">
+                Hey explorer 👋 What are you curious about?
+            </div>
+
+        </div>
+
+        <div class="chat-input">
+
+            <input
+                id="question"
+                placeholder="Ask about nature..."
+                onkeydown="if(event.key==='Enter') askAI()"
+            >
+
+            <button onclick="askAI()">→</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- EXPEDITION -->
+
+<div class="modal" id="reportModal">
+
+    <div class="modal-box">
+
+        <button class="close" onclick="closeModal('reportModal')">
+            ×
+        </button>
+
+        <div class="modal-icon">🌎</div>
+
+        <h3>Your Expedition</h3>
+
+        <div class="report">
+
+            <div>
+                <span>TIME OUTSIDE</span>
+                <strong>47 min</strong>
+            </div>
+
+            <div>
+                <span>DISTANCE</span>
+                <strong>3.2 km</strong>
+            </div>
+
+            <div>
+                <span>DISCOVERIES</span>
+                <strong id="reportDiscoveries">18</strong>
+            </div>
+
+            <div>
+                <span>XP EARNED</span>
+                <strong id="reportXP">420</strong>
+            </div>
+
+        </div>
+
+        <div class="ai-summary">
+
+            <span>✦ AI SUMMARY</span>
+
+            <p>
+                You spent meaningful time outside today.
+                Keep exploring — every walk is an opportunity
+                to notice something new.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- MISSION MODAL -->
+
+<div class="modal" id="missionModal">
+
+    <div class="modal-box center">
+
+        <div class="success">✓</div>
+
+        <h3>Mission Complete!</h3>
+
+        <p>
+            Excellent observation, explorer.
+        </p>
+
+        <div class="earned">
+            +50 XP
+        </div>
+
+        <button class="primary-btn full" onclick="closeModal('missionModal')">
+            CONTINUE EXPLORING
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
